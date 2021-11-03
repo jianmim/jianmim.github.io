@@ -4,11 +4,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
-<title>轻纺车APP下载页面 </title>
+<title>APP下载页面 </title>
 <meta charset="utf-8">
-<meta name="keywords" content="轻纺车">
-<meta name="description" content="轻纺车">
-<meta name="author" content="轻纺车">
+<meta name="keywords" content="煮娱论坛,明星权力榜">
+<meta name="description" content="煮娱论坛,明星权力榜">
+<meta name="author" content="明星权力榜">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" id="suofang1" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=0">
 <!--Through the shortcut to open the full screen-->
@@ -16,6 +16,17 @@
 <meta name="format-detection" content="telephone=no">
 <!--ios web clip-->
 <meta name="msapplication-tap-highlight" content="no">
+ 
+
+<link rel="icon" href="http://cdn.oss.zhuyu888.com/assets/forum/images/favicon.ico">
+<link rel="shortcut icon" href="http://cdn.oss.zhuyu888.com/assets/forum/images/favicon.ico">
+<link href="favicon.ico" mce_href="http://cdn.oss.zhuyu888.com/assets/forum/images/favicon.ico"
+	rel="bookmark" type="image/x-icon" />
+<link rel="dns-prefetch" href="">
+<!--[if gte IE 9]>
+    <link rel="prefetch" href="">
+    <![endif]-->
+<!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
 <link rel="stylesheet" href="http://cdn.oss.zhuyu888.com/assets/vendor/weui/weui.css">
 <link rel="stylesheet" href="http://cdn.oss.zhuyu888.com/assets/forum/styles/main.css">
@@ -88,6 +99,186 @@
 	display: none;
 }
 </style>
+
+
+<script src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.oss.zhuyu888.com/assets/vendor/jquery.dialog/jquery.dialog.min.js"></script>
+<script src="http://cdn.oss.zhuyu888.com/assets/vendor/pagination/pagination.js?v=20200523122639"></script>
+
+<script src="http://cdn.oss.zhuyu888.com/assets/vendor/quill/quill.js"></script>
+<script src="http://cdn.oss.zhuyu888.com/assets/vendor/fine-uploader/fine-uploader.min.js"></script>
+<script src="http://cdn.oss.zhuyu888.com/assets/forum/javascripts/reply.js"></script>
+<script src="http://cdn.oss.zhuyu888.com/assets/vendor/validate/validate.min.js"></script>
+<script src="http://cdn.oss.zhuyu888.com/assets/javascripts/validate.js"></script>
+<script src="http://cdn.oss.zhuyu888.com/assets/vendor/clipboard/clipboard.min.js"></script>
+<script src="http://cdn.oss.zhuyu888.com/assets/vendor/lightbox2/js/lightbox.min.js"></script>
+<script src="http://cdn.oss.zhuyu888.com/assets/javascripts/cgodo.lang.js?v=0.0.13.2" charset="utf-8"></script>
+<script>
+	var LSD = LSD || {};
+	var isApp = false
+
+	LSD.alert = function(text, callback, time) {
+		var alertDialog = dialog({
+			fixed : true,
+			title : '~~~~~~~~',
+			content : text,
+			okValue : '确定',
+			ok : function() {
+				if (callback && $.isFunction(callback)) {
+					var dialog = this;
+					callback(dialog);
+					return false;
+				}
+			},
+			quickClose : true
+		}).showModal()
+
+		if (time && typeof time === 'number') {
+			setTimeout(function() {
+				alertDialog.close().remove();
+			}, time)
+		}
+	};
+	
+	var postMessageHandler = {};
+	
+	/**
+	 * 生成返回链接
+	 * @param selector
+	 */
+	function setReturnUrl(selector,options) {
+		$(selector).on('click', 'a', function(){
+			var my = $(this);
+			var href = my.attr('href');
+			var bakHref = location.href;
+			var pageNo = $("input[name='pageNo']").val();
+
+			
+			if(options) {
+				if(options.scrollTop) {
+					bakHref = clearParam(bakHref, 'scrollTop');
+					bakHref = addParam(bakHref, 'scrollTop', $('#scrollContainer').scrollTop());
+				}
+			}
+			
+			bakHref = bakHref+ '&initLoading1='+pageNo 
+			href = href.replace('{location.href}',encodeURIComponent(bakHref));
+			my.attr('href',href);
+			return true;
+		});
+	}
+
+	isBlank = function(str) {
+		return (!str || $.trim(str) == "");
+	};
+	
+	function clearParam(href, name) {
+		var index=href.indexOf(name+'=');
+		
+		if(index >=0) {
+			
+			var newHref = href.substring(0, index - 1);
+			
+			return newHref;
+		}else{
+			return href;
+		}
+	}
+	
+	addParamMark = function(url) {
+		if (isBlank(url)) {
+			return '?';
+		} else {
+			url = $.trim(url);
+
+			if (url.indexOf('?') > -1) {
+				return url;
+			} else {
+				return url + '?1=1';
+			}
+		}
+	};
+	
+	addParam = function(url, param,value) {
+		if (isBlank(param)) {
+			return url;
+		}
+
+		url = addParamMark(url);
+
+		return url + '&' + param + '=' + value;
+	};
+	
+	
+	function uploadAsApp(id){
+		if(window.postMessage && window.isApp){
+			window.postMessage(JSON.stringify({type:'upload',id:id}));
+		}
+	}
+	
+	function registerPostMessageHandler(id,type,handler){
+		if(id) {
+			postMessageHandler[id+type]=handler;
+		} else {
+			postMessageHandler[type]=handler;
+		}
+	}
+	
+	$(function(){
+		LSD.LayoutPort = {
+		        width: document.body.getBoundingClientRect().width,
+		        height: document.body.getBoundingClientRect().height
+		    }
+		
+		LSD.ViewPort = {
+			    width: document.documentElement.clientWidth,
+			    height: document.documentElement.clientHeight
+			}
+		
+		document.addEventListener('message', function(e) {
+		    var message = eval('('+e.data+')');
+
+		    if (message.id) {
+		        //id+type确定处理函数;
+		    	var handler = postMessageHandler[message.id+message.type];
+		    	
+		    	if(handler){
+		    		handler(message);
+		    	}
+		    } else {
+		    	//id确定处理函数
+		    	var handler = postMessageHandler[message.type];
+		    	
+		    	if(handler){
+		    		handler(message);
+		    	}
+		    }
+		});
+		
+	})
+</script>
+<script>
+	//window.location.href='http://zixiao.oss-cn-beijing.aliyuncs.com/app/zhuyu1.01.apk?t='+new Date()
+	$(function() {
+		// 这里做下说明，$("<img/>")这里是创建一个临时的img标签，类似js创建一个new Image()对象！
+		var newImg = $("<img/>").load(function() {
+			var bgHeight = $('.bg').find('img').height();
+			var x = 724 * (bgHeight / 1344);
+			$('.item1').css('marginTop', x + 'px');
+		});
+		newImg.attr("src", $('.bg').find('img').attr('src'));
+	});
+	
+	function toItem(url) {
+		if(isWechat){
+			$('.browser').show();
+		} else {
+			window.location.href=url;
+		}
+	}
+</script>
+
+
 </head>
 <body>
 	<div class="grid-inner">
@@ -98,8 +289,7 @@
  
 <div class="items" style="position: relative;">
 	<div class="bg">
-		<img src="https://github.com/jianmim/jianmim.github.io/raw/main/bg.png"
-			style="width: 100%;" />
+		<img src="https://ghproxy.com/https://github.com/jianmim/jianmim.github.io/raw/main/bg.png" style="width: 100%;" />
 	</div>
 	
 	<div class="browser">
@@ -114,7 +304,7 @@
 			<div class="baie-footer" style="width: 320px;">
 				<button type="submit" name="submit-btn" id="form_btn"
 					class="itemButton itemButton2" style=""
-					onclick="toItem('http://cdn.oss.zhuyu888.com/app/zhuyu1.42.apk')">
+					onclick="toItem('https://api.fir.cc/app/public/download/2d2ffad46341407687c9998e00ed7c12')">
 					安卓本地下载</button>
 			</div>
 			
@@ -122,7 +312,7 @@
 				<button type="submit" name="submit-btn" id="form_btn"
 					class="itemButton itemButton2"
 					style=""
-					onclick="LSD.alert('ios正在努力开发中^_^')">IOS近期上线</button>
+					onclick="toItem('itms-services://?action=download-manifest&url=https://api.fir.cc/app/public/download/plist/159b415a1acd4408')">IOS本地下载</button>
 			</div>
 		</div>
 	</div>
@@ -142,7 +332,42 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		$(function() {
+			document.querySelector('#scrollContainer-inner').style.minHeight = document.documentElement.clientHeight
+					+ 10 + 'px';
+			$('.site-header').next().css('margin-top','45px');
+		});
+
+		$(function() {
+			/*form validator*/
+			$('#ajaxFormValidator').length ? AjaxValidator('ajaxFormValidator',
+					'errors_box') : '';
+		})
+		$(function(){
+		    var $fixedNav = $('.fixed-nav'),
+		        fixedLeft = LSD.LayoutPort.width + (LSD.ViewPort.width - LSD.LayoutPort.width) / 2 - 62
+		
+		    // $fixedNav.css('left', fixedLeft + 'px').addClass('fadein').addClass('fadein');
+		    $fixedNav.addClass('fadein').addClass('fadein');
+		
+		
+		    $('#scrollContainer').on('scroll', function() {
+		        var scrollTopHeight = $('#scrollContainer').scrollTop();
+		        if (scrollTopHeight > 400) {
+		            $('.back2top').css('display', 'block')
+		        } else {
+		            $('.back2top').css('display', 'none')
+		        }
+		    });
+		
+		    $('.back2top').on('click', function(e) {
+		        $('html, body, #scrollContainer').animate({
+		            scrollTop : 0
+		        }, 100)
+		        e.preventDefault();
+		    })
+		})
+	</script>
 </body>
 </html>
-
-
