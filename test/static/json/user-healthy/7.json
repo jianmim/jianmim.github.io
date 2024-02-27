@@ -1,0 +1,49 @@
+{
+	"categories": [
+		"渔船(大)",
+		"渔船(中)",
+		"渔船(小)"
+		
+	],
+	"series": [{
+			"name": "渔船数量",
+			"data": [{
+					"value": 5000,
+					"color": "#24ABFD"
+				},
+				{
+					"value": 3000,
+					"color": "#24ABFD"
+				},
+				{
+					"value": 3500,
+					"color": "#24ABFD"
+				}
+			],
+			"type": "column",
+			"color": "#24ABFD",
+			"unit": "",
+			"textNoShow": true
+		},
+		{
+			"name": "往年同时段占比",
+			"data": [
+				1,
+				91,
+				97
+			],
+			"type": "line",
+			"addPoint": true,
+			"color": "#DF297D",
+			"unit": "%",
+			"index": 1
+		}
+	],
+	"yAxis": [{
+		"max": 100000,
+		"min": 0
+	}, {
+		"max": 100,
+		"min": 0
+	}]
+}
