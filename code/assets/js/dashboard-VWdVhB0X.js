@@ -1,0 +1,1 @@
+import{_ as e}from"./_plugin-vue_export-helper-x3n3nnut.js";import{x as o,M as t}from"./store-dof5ccn5.js";const a={},c={class:"layout-padding"};function s(r,d){return o(),t("div",c)}const f=e(a,[["render",s],["__scopeId","data-v-bddfeb40"]]);export{f as default};
