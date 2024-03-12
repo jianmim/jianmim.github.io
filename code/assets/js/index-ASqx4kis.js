@@ -1,0 +1,7 @@
+import{k as r,s as _,o as m,q as d,x as c,y as p,$ as f,F as y,i as t,_ as s}from"./store-dof5ccn5.js";import{u as v,L as a,e as n}from"./index-zQlakb1H.js";const L=r({name:"layout"}),g=r({...L,setup(E){const l={defaults:t(()=>s(()=>import("./defaults-wTPFKV1_.js"),__vite__mapDeps([0,1,2,3,4]),import.meta.url)),classic:t(()=>s(()=>import("./classic-55r7o-q_.js"),__vite__mapDeps([5,1,2,3,4]),import.meta.url)),transverse:t(()=>s(()=>import("./transverse-gaEIKu85.js"),__vite__mapDeps([6,1,2,3,4]),import.meta.url)),columns:t(()=>s(()=>import("./columns-JO25fFE9.js"),__vite__mapDeps([7,1,2,3,4]),import.meta.url))},u=v(),{themeConfig:e}=_(u),i=()=>{a.get("oldLayout")||a.set("oldLayout",e.value.layout);const o=document.body.clientWidth;o<1e3?(e.value.isCollapse=!1,n.emit("layoutMobileResize",{layout:"defaults",clientWidth:o})):n.emit("layoutMobileResize",{layout:a.get("oldLayout")?a.get("oldLayout"):e.value.layout,clientWidth:o})};return m(()=>{i(),window.addEventListener("resize",i)}),d(()=>{window.removeEventListener("resize",i)}),(o,R)=>(c(),p(f(l[y(e).layout])))}});export{g as default};
+function __vite__mapDeps(indexes) {
+  if (!__vite__mapDeps.viteFileDeps) {
+    __vite__mapDeps.viteFileDeps = ["./defaults-wTPFKV1_.js","./store-dof5ccn5.js","../css/store-dzCp3yyn.css","./index-zQlakb1H.js","../css/index-5Z0pdBTT.css","./classic-55r7o-q_.js","./transverse-gaEIKu85.js","./columns-JO25fFE9.js"]
+  }
+  return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
+}

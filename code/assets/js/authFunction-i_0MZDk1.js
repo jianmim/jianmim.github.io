@@ -1,0 +1,1 @@
+import{f as e,j as u}from"./index-zQlakb1H.js";function f(s){return e().userInfos.authBtnList.some(r=>r===s)}function i(s){let t=!1;return e().userInfos.authBtnList.map(n=>{s.map(o=>{n===o&&(t=!0)})}),t}function c(s){const t=e();return u(s,t.userInfos.authBtnList)}export{f as a,i as b,c};

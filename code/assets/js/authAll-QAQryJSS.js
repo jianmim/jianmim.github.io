@@ -1,0 +1,1 @@
+import{k as e,s as u,l,ap as f,G as m}from"./store-dof5ccn5.js";import{f as p,j as c}from"./index-zQlakb1H.js";const d=e({name:"authAll"}),v=e({...d,props:{value:{type:Array,default:()=>[]}},setup(t){const s=t,r=p(),{userInfos:a}=u(r),o=l(()=>c(s.value,a.value.authBtnList));return(n,_)=>o.value?f(n.$slots,"default",{key:0}):m("",!0)}});export{v as default};
