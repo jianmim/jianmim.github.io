@@ -1,0 +1,1 @@
+import{k as a,x as s,M as t,O as e}from"./store-mQZkmHj-.js";const o={class:"layout-padding"},i=e("div",{class:"layout-padding-auto layout-padding-view"},[e("div",{class:"w100 h100 flex"},[e("div",{class:"flex-margin color-primary"},"测试界面")])],-1),n=[i],c=a({name:"pagesFilteringDetails1"}),p=a({...c,setup(d){return(l,_)=>(s(),t("div",o,n))}});export{p as default};

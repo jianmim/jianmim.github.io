@@ -1,0 +1,1 @@
+import{_ as o}from"./editRegion.vue_vue_type_script_setup_true_name_sysEditRegion_lang-y7bD9GOs.js";import"./index-lw7p-_pG.js";import"./store-mQZkmHj-.js";import"./sys-region-api-ScNmIeRk.js";export{o as default};
