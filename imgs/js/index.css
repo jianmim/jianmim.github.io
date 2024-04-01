@@ -1,0 +1,63 @@
+.el-calendar-table .el-calendar-day {
+  box-sizing:content-box;
+  padding: 8px;
+  height: var(--el-calendar-cell-width);
+}
+.head-title {
+    font-size: 14px;
+    display: flex;
+}
+
+.daydiv {
+    margin-right: 30px;
+}
+
+.dayshift {
+    margin-right: 7px;
+    width: 6px;
+    height: 6px;
+    background: #e9d390;
+    border-radius: 50%;
+}
+
+.nightshift {
+    margin-right: 7px;
+    width: 6px;
+    height: 6px;
+    background: #2186f6;
+    border-radius: 50%;
+}
+.calendar-click {
+    border: 1px solid #1096db;
+    color: #1096db;
+    display: flex;
+  }
+  .actived {
+    cursor: pointer;
+    background: #1096db;
+    color: #021534;
+  }
+
+  .clickitem {
+    width: 50px;
+    height: 24px;
+    border-radius: 2px 0px 0px 2px;
+    cursor: pointer;
+    text-align: center;
+    border-right: 1px solid #1096db;
+  }
+  .clickitem:last-child {
+    border: none;
+  }
+
+  /* .el-calendar .is-selected,
+   .el-calendar .is-selected:not(.in-range) {
+     background-color: #e9d390;
+     border-color: #f0f0f0;
+   } */
+
+   .el-calendarCraW{
+    background-color: #e9d390;
+     border-color: #f0f0f0;
+     font-size: 1vw;
+   }
