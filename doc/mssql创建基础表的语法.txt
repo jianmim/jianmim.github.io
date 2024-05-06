@@ -1,0 +1,56 @@
+
+CREATE TABLE [dbo].[MX_Temp](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[CreateDate] [datetime] NOT NULL,
+	[Creator] [int] NOT NULL,
+	[UpdateDate] [datetime] NOT NULL,
+	[Updater] [int] NOT NULL,
+	[IsDel] [bit] NOT NULL,
+	[CompanyID] [int] NOT NULL,
+ CONSTRAINT [PK_MX_Temp] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[MX_Temp] ADD  CONSTRAINT [DF_MX_Temp_CreateDate]  DEFAULT (getdate()) FOR [CreateDate]
+GO
+
+ALTER TABLE [dbo].[MX_Temp] ADD  CONSTRAINT [DF_MX_Temp_Creator]  DEFAULT ((0)) FOR [Creator]
+GO
+
+ALTER TABLE [dbo].[MX_Temp] ADD  CONSTRAINT [DF_MX_Temp_UpdateDate]  DEFAULT (getdate()) FOR [UpdateDate]
+GO
+
+ALTER TABLE [dbo].[MX_Temp] ADD  CONSTRAINT [DF_MX_Temp_Updater]  DEFAULT ((0)) FOR [Updater]
+GO
+
+ALTER TABLE [dbo].[MX_Temp] ADD  CONSTRAINT [DF_MX_Temp_IsDel]  DEFAULT ((0)) FOR [IsDel]
+GO
+
+ALTER TABLE [dbo].[MX_Temp] ADD  CONSTRAINT [DF_MX_Temp_CompanyID]  DEFAULT ((0)) FOR [CompanyID]
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'创建日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'MX_Temp', @level2type=N'COLUMN',@level2name=N'CreateDate'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'创建人' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'MX_Temp', @level2type=N'COLUMN',@level2name=N'Creator'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最后更新日期' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'MX_Temp', @level2type=N'COLUMN',@level2name=N'UpdateDate'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'最后更新人' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'MX_Temp', @level2type=N'COLUMN',@level2name=N'Updater'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'删除标志' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'MX_Temp', @level2type=N'COLUMN',@level2name=N'IsDel'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'公司' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'MX_Temp', @level2type=N'COLUMN',@level2name=N'CompanyID'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'实例表' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'MX_Temp'
+GO
+
+

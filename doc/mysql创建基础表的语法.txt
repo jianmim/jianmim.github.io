@@ -1,0 +1,10 @@
+CREATE TABLE `MX_Temp` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Creator` int(11) NOT NULL DEFAULT '0' COMMENT '创建人',
+  `CreateDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UpdateDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后修改时间',
+  `Updater` int(11) NOT NULL DEFAULT '0' COMMENT '最后修改人',
+  `IsDel` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否删除',
+  `CompanyID` int(11) NOT NULL DEFAULT '0' COMMENT '公司',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='实例表';

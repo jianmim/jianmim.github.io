@@ -1,0 +1,111 @@
+--db							数据库文件
+--dll							底层dll以及其他模块dll
+--doc							说明文档
+--Toowell.Common 					共用代码模块
+--Toowell.S70					S70解决方案
+--Toowell.S70.Api					前后端分离版本-接口
+--Toowell.S70.Apps				各个模块控制器、页面
+----Toowell.S70.Apps.APP			APP模块控制器、页面
+----Toowell.S70.Apps.Call			外呼模块
+----Toowell.S70.Apps.Flow			工作流
+----Toowell.S70.Apps.Frame			主框架模块(用户、组织、角色等)控制器、页面
+----Toowell.S70.Apps.ICC			ICC报表
+----Toowell.S70.Apps.IM				在线客服模块控制器、页面
+----Toowell.S70.Apps.NetCall			网络电话模块
+----Toowell.S70.Apps.Order			新工单、新客户模块控制器、页面
+----Toowell.S70.Apps.QC				人工质检
+----Toowell.S70.Apps.Questionnaire		问卷模块
+----Toowell.S70.Apps.Report			自定义报表模块控制器、页面
+--Toowell.S70.Apis				前后端分离版本 类似MVC版本
+--toowell.s70.comp				主框架模块--共用控件生成器
+--toowell.s70.cust				主框架模块--自定义控件生成器
+--toowell.s70.designer				主框架模块--代码生产器前端页面
+--Toowell.S70.Generator				主框架模块--代码生产器项目文件
+--Toowell.S70.Migrations			主框架模块--数据库表自动生产工具
+--Toowell.S70.Models				各个模块的实体类
+----Toowell.S70.Models.APP			APP模块实体类
+----Toowell.S70.Models.Call			外呼模块
+----Toowell.S70.Models.Flow			工作流
+----Toowell.S70.Models.Frame			主框架模块(用户、组织、角色等)实体类
+----Toowell.S70.Models.ICC			ICC报表
+----Toowell.S70.Models.IM			在线客服模块实体类
+----Toowell.S70.Models.NetCall			网络电话模块
+----Toowell.S70.Models.Notice			消息通知
+----Toowell.S70.Models.Order			新工单、新客户模块实体类
+----Toowell.S70.Models.QC			人工质检
+----Toowell.S70.Models.Questionnaire		问卷模块
+----Toowell.S70.Models.Report			自定义报表模块实体类
+----
+--Toowell.S70.View				前后端分离版本-前端
+--uniapp						UNIAPP的小程序、APP
+
+
+基础目录--必须给的目录
+--db							数据库文件
+--dll							底层dll以及其他模块dll
+--doc							说明文档
+--Toowell.Common 					共用代码模块
+--Toowell.S70					S70解决方案
+--Toowell.S70.Api					前后端分离版本-接口
+--Toowell.S70.Apis				前后端分离版本 类似MVC版本
+--toowell.s70.comp				主框架模块--共用控件生成器
+--toowell.s70.cust				主框架模块--自定义控件生成器
+--toowell.s70.designer				主框架模块--代码生产器前端页面
+--Toowell.S70.Generator				主框架模块--代码生产器项目文件
+--Toowell.S70.Migrations			主框架模块--数据库表自动生产工具
+--Toowell.S70.View				前后端分离版本-前端
+--Toowell.S70.Models/Toowell.S70.Models.Frame			
+--Toowell.S70.Apps/Toowell.S70.Apps.Frame				
+
+
+在线客服模块-IM
+/Toowell.S70.Models/Toowell.S70.Models.IM
+/Toowell.S70.Apps/Toowell.S70.Apps.IM
+工作流模块-Flow
+/Toowell.S70.Models/Toowell.S70.Models.Flow
+/Toowell.S70.Apps/Toowell.S70.Apps.Flow
+ICC报表模块-ICC
+/Toowell.S70.Models/Toowell.S70.Models.ICC
+/Toowell.S70.Apps/Toowell.S70.Apps.ICC
+工单、客户模块-Order
+/Toowell.S70.Models/Toowell.S70.Models.Order
+/Toowell.S70.Apps/Toowell.S70.Apps.Order
+自定义报表模块-Report
+/Toowell.S70.Models/Toowell.S70.Models.Report
+/Toowell.S70.Apps/Toowell.S70.Apps.Report
+APP模块
+/uniapp
+/Toowell.S70.Models/Toowell.S70.Models.APP
+/Toowell.S70.Apps/Toowell.S70.Apps.APP
+网络电话模块-NetCall
+/Toowell.S70.Models/Toowell.S70.Models.NetCall
+/Toowell.S70.Apps/Toowell.S70.Apps.NetCall
+消息通知模块-Notice
+/Toowell.S70.Models/Toowell.S70.Models.Notice
+/Toowell.S70.Apps/Toowell.S70.Apps.Notice
+人工质检
+/Toowell.S70.Models/Toowell.S70.Models.QC
+/Toowell.S70.Apps/Toowell.S70.Apps.QC
+问卷管理
+/Toowell.S70.Models/Toowell.S70.Models.Questionnaire
+/Toowell.S70.Apps/Toowell.S70.Apps.Questionnaire
+外呼(外呼和工单相互引用需要同时给出)
+/Toowell.S70.Models/Toowell.S70.Models.Call
+/Toowell.S70.Apps/Toowell.S70.Apps.Call
+
+
+例如 张三 申请了S70标准版SVN
+基础目录			OK
+在线客服模块-IM		
+工作流模块-Flow		OK
+ICC报表模块-ICC		OK
+工单、客户模块-Order	Ok
+自定义报表模块-Report	OK
+APP 			OK
+网络电话
+消息通知
+人工质检			OK
+问卷管理
+外呼			OK
+
+则表示OK的要给的目录，如果没有OK则默认为不给
