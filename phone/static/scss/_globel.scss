@@ -1,0 +1,373 @@
+//颜色
+$yellow:   	#fbbd08;
+$orange:   	#f37b1d;
+$red:   	#e54d42;
+$pink:   	#e03997;
+$mauve:   	#b745cb;
+$purple:   	#8044de;
+$blue:   	#0081ff;
+$cyan:   	#37c0fe;
+$green:   	#3eb93b;
+$olive:   	#8dc63f;
+$grey:   	#8799a3;
+$brown:   	#a5673f;
+
+$colors: ();
+$colors: map-merge(
+    (
+        'yellow':  	$yellow,
+        'orange':  	$orange,
+        'red':  	$red,
+        'pink':  	$pink,
+        'mauve':  	$mauve,
+        'purple':  	$purple,
+        'violet':  	$purple,
+        'blue':  	$blue,
+        'cyan':  	$cyan,
+        'green':  	$green,
+        'olive':  	$olive,
+        'grey':  	$grey,
+        'brown':  	$brown,
+    ),
+    $colors
+);
+
+//灰度
+$white:   	#ffffff;
+$gray-f: 	#f8f9fa;
+$gray-e:    #eeeeee;
+$gray-d:    #dddddd;
+$gray-c:    #cccccc;
+$gray-b:    #bbbbbb;
+$gray-a:	#aaaaaa;
+$dark-9:    #999999;
+$dark-8:    #888888;
+$dark-7:    #777777;
+$dark-6:    #666666;
+$dark-5:    #555555;
+$dark-4:    #444444;
+$dark-3:    #333333;
+$dark-2:    #222222;
+$dark-1:    #111111;
+$black:    	#000000;
+
+$grays: ();
+$grays: map-merge(
+    (
+        'white':  	$white,
+        'gray-f':  	$gray-f,
+        'gray-e':  	$gray-e,
+        'gray-d':  	$gray-d,
+        'gray-c':  	$gray-c,
+        'gray-b':  	$gray-b,
+        'gray-a':  	$gray-a,
+        'gray':  	$gray-a,
+    ),
+    $grays
+);
+
+$darks: ();
+$darks: map-merge(
+    (
+        'dark-9':  	$dark-9,
+        'dark-8':  	$dark-8,
+        'dark-7':  	$dark-7,
+        'dark-6':  	$dark-6,
+        'dark-5':  	$dark-5,
+        'dark-4':  	$dark-4,
+        'dark-3':  	$dark-3,
+        'dark-2':  	$dark-2,
+        'dark-1':  	$dark-1,
+        'black':  	$black,
+    ),
+    $darks
+);
+
+
+// 边框
+$border-width:          1rpx !default;                      // 边框大小
+
+// 圆角
+$radius:                10rpx !default;                     // 默认圆角大小
+$radius-lg:             40rpx !default;                     // 大圆角
+$radius-sm:             6rpx !default;                      // 小圆角
+$round-pill:            1000rpx !default;                   // 半圆
+
+// 动画过渡
+$transition-base:       all .2s ease-in-out !default;       // 默认过渡
+$transition-base-out:   all .04s ease-in-out !default;      // 进场过渡
+$transition-fade:       opacity .15s linear !default;       // 透明过渡
+$transition-collapse:   height .35s ease !default;          // 收缩过渡
+
+// 间距
+$spacer: 20rpx !default;
+$spacers: () !default;
+$spacers: map-merge(
+    (
+        0: 0,
+        1: $spacer * 0.25,
+        2: $spacer * .5,
+        3: $spacer,
+        4: $spacer * 1.5,
+        5: $spacer * 3,
+        6: $spacer * 5,
+    ),
+    $spacers
+);
+
+// 字形
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          900 !default;
+$fontsize: () !default;
+$fontsize: map-merge(
+    (
+        xs: 20,
+        sm: 24,
+        df: 28,
+        lg: 32,
+        xl: 36,
+        xxl: 44,
+        sl: 80,
+        xsl: 120
+    ),
+    $fontsize
+);
+
+// 段落
+$line-height-base:            1.5 !default;
+$line-height-lg:              2 !default;
+$line-height-sm:              1.25 !default;
+
+// 图标
+$iconsize: () !default;
+$iconsize: map-merge(
+    (
+        xs: 0.5,
+        sm: 0.75,
+        df: 1,
+        lg: 1.25,
+        xl: 1.5,
+        xxl: 2,
+        sl: 6,
+        xsl: 10
+    ),
+    $iconsize
+);
+
+/* 颜色变量 */
+$blue:   	#198cff !default;
+$black:   #000000 !default;
+$white:   #ffffff !default;
+$yellow:  #fbbd08 !default;
+$orange:  #E59236 !default;
+$red:   	#e54d42 !default;
+$pink:   	#e03997 !default;
+$mauve:   #b745cb !default;
+$purple:  #8044de !default;
+$cyan:   	#37c0fe !default;
+$green:   #3eb93b !default;
+$olive:   #8dc63f !default;
+$grey:   	#8799a3 !default;
+$brown:   #a5673f !default;
+
+$colors: (
+	blue:   	#198cff,
+	black:   #000000,
+	white:   #ffffff,
+	yellow:  #fbbd08,
+	orange:  #E59236,
+	red:   	#e54d42,
+	pink:   	#e03997,
+	mauve:   #b745cb,
+	purple:  #8044de,
+	cyan:   	#37c0fe,
+	green:   #3eb93b,
+	olive:   #8dc63f,
+	grey:   	#8799a3,
+	brown:   #a5673f
+);
+
+// @each $name in map-keys($colors){
+// 	.t-#{$name}{
+// 		color: func($name);
+// 	}
+// }
+
+// @function func($name){
+// 	@return map-get($colors,$name);
+// }
+
+/* 边框颜色 */
+
+@each $name,$color in (white,$white),(grey,$grey),(blue,$blue),(yellow,$yellow), {
+  .bd-#{$name} {
+    border: 1rpx solid $color !important;
+		// border: bd(1rpx,solid,$color)
+  }
+}
+
+@function bd($width:1rpx,$solid:solid, $color:$blue) {
+  @return $width $solid $color;
+}
+
+/*文本格式化，超出范围，显示省略号*/
+@mixin textOverflow($width:100%,$display:block) {
+  width: $width;
+  display: $display;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* 圆角盒子 */
+@mixin round($size: 11rpx,$bg: #fff) {
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  line-height: $size;
+  text-align: center;
+  background: $bg;
+}
+
+
+/* 设定盒子圆角值 */
+@mixin rounded-corners($argus){
+  border-radius: 1rpx * $argus !important;
+}
+
+// .rounded{
+//   @include rounded-corners(20)
+// }
+// .no-rounded{
+//   @include rounded-corners(0)
+// }
+
+/* 设定盒子圆角指定边的值 */
+@mixin rounded($top,$right,$bottom,$left){
+  border-radius: $top * 1rpx $right * 1rpx $bottom * 1rpx $left * 1rpx !important;
+}
+
+// .rounded-bottom {
+// 	border: solid 1rpx $blue;
+//   @include rounded(0,0,20,20);
+// }
+
+/* color字体颜色 */
+@each $t-name, $color in (t-white, $white),
+        (t-black, $black),
+        (t-red, $red),
+        (t-green, $green), {
+  .#{$t-name} {
+    color: $color;
+  }
+}
+
+/* background-color背景色 */
+@each $bg-name, $color in (bg-white, $white),
+        (bg-black, $black),
+        (bg-red, $red),
+        (bg-green, $green), {
+  .#{$bg-name} {
+    background-color: $color;
+  }
+}
+
+/* border边框色 */
+@each $bd-name, $color in (bd-white, $white),
+        (bd-red, $red),
+        (bd-balck, $black),
+        (bd-green, $green), {
+  .#{$bd-name} {
+    border: 1rpx solid $color !important;
+  }
+}
+
+/* margin和padding */
+
+$sp-size: 0;
+@while $sp-size<=60 {
+  .m-#{$sp-size} {
+    margin: 1rpx * $sp-size !important;
+  }
+  .m-t-#{$sp-size} {
+    margin-top: 1rpx * $sp-size !important;
+  }
+  .m-b-#{$sp-size} {
+    margin-bottom: 1rpx * $sp-size !important;
+  }
+  .m-l-#{$sp-size} {
+    margin-left: 1rpx * $sp-size !important;
+  }
+  .m-r-#{$sp-size} {
+    margin-right: 1rpx * $sp-size !important;
+  }
+  .p-#{$sp-size} {
+    padding: 1rpx * $sp-size !important;
+  }
+  .p-t-#{$sp-size} {
+    padding-top: 1rpx * $sp-size !important;
+  }
+  .p-b-#{$sp-size} {
+    padding-bottom: 1rpx * $sp-size !important;
+  }
+  .p-l-#{$sp-size} {
+    padding-left: 1rpx * $sp-size !important;
+  }
+  .p-r-#{$sp-size} {
+    padding-right: 1rpx * $sp-size !important;
+  }
+  $sp-size: $sp-size+5
+}
+
+/* font-size字体大小 */
+$fs-size: 20;
+@while $fs-size <=50 {
+  .fs-#{$fs-size} {
+    font-size: 1rpx * $fs-size !important;
+  }
+  $fs-size: $fs-size+2;
+}
+
+/* border-radius圆角 */
+
+$br-size: 5;
+@while $br-size<=50 {
+  .br-#{$br-size} {
+    border-radius: 1rpx * $br-size !important;
+  }
+	$br-size: $br-size+5;
+}
+
+/* width宽度 */
+
+$w-size: 20;
+@while $w-size<=750 {
+  .w-#{$w-size} {
+    width: 1rpx * $w-size !important;
+  }
+	$w-size: $w-size+10;
+}
+
+/* height高度 */
+
+$h-size: 20;
+@while $h-size<=500 {
+  .h-#{$h-size} {
+    height: 1rpx * $h-size !important;
+	}
+	$h-size: $h-size+10;
+}
+
+/* line-height行高 */
+$lh-size: 20;
+@while $lh-size<=500 {
+  .lh-#{$lh-size} {
+    line-height: 1rpx * $lh-size !important;
+  }
+	$lh-size: $lh-size+10;
+}
+
