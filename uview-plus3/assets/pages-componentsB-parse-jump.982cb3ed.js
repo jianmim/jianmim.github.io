@@ -1,1 +1,0 @@
-import{o as e,c as r,w as s,i as o,f as t}from"./index.6f985586.js";import{_ as a}from"./_plugin-vue_export-helper.cdc0426e.js";const n=a({},[["render",function(a,n,f,u,c,i){const l=o;return e(),r(l,null,{default:s((()=>[t(" 跳转测试页面 ")])),_:1})}]]);export{n as default};
