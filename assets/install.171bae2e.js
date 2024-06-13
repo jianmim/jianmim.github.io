@@ -1,0 +1,1 @@
+import{a as o}from"./index.b621671f.js";const t=(t,n)=>{if(t.install=s=>{for(const e of[t,...Object.values(o(n,{}))])s.component(e.name,e)},n)for(const[o,s]of Object.entries(n))t[o]=s;return t},n=o=>(o.install=()=>{},o);export{t as a,n as w};

@@ -1,0 +1,1 @@
+import{ak as e}from"./index-80b03063.js";const d=()=>{const d={},i=e([]);return{children:i,addChild:e=>{d[e.uid]=e,i.value.push(e)},removeChild:e=>{delete d[e],i.value=i.value.filter((d=>d.uid!==e))}}};export{d as u};

@@ -1,0 +1,1 @@
+const e=(e,l,n=250)=>{let r=null;const t=()=>{r&&(clearInterval(r),r=null)};return{handleLongPressEvent:(...s)=>{l.value?(e(...s),t(),r=setInterval((()=>{e(...s)}),n)):e(...s)},clearLongPressTimer:t}};export{e as u};
